@@ -1,0 +1,435 @@
+<!DOCTYPE html> 
+<html lang="it">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ArkaiaStudio </title>
+    <style>
+      /* Reset del margine di default */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #f4f4f9 30%, #eceff1);
+        color: #333;
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      h1 {
+        color: #8B0000;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      p {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #555;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      /* Navigazione */
+      nav {
+        background-color: #4B0082;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        color: #fff;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #ddd;
+        color: #4B0082;
+        transform: scale(1.1);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Layout del Contenuto */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      table th, table td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      table th {
+        background-color: #4B0082;
+        color: white;
+        font-size: 1.1rem;
+      }
+
+      table td {
+        background-color: #f9f9f9;
+      }
+
+      table tr:nth-child(even) td {
+        background-color: #f2f2f2;
+      }
+
+      table tr:hover {
+        background-color: #dcdcdc;
+        transform: scale(1.02);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Form Styling */
+      form {
+        background-color: white;
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      form:hover {
+        box-shadow: 0px 15px 40px rgba(0,0,0,0.2);
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+        border-color: #4B0082;
+        box-shadow: 0 0 10px rgba(75,0,130,0.2);
+      }
+
+      textarea {
+        height: 150px;
+      }
+
+      input[type="submit"] {
+        background-color: #4B0082;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #8A2BE2;
+        transform: scale(1.05);
+      }
+
+      /* Animazioni */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Sezioni per il progetto */
+      .project-section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      .project-section h2 {
+        color: #4B0082;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .project-section ul {
+        list-style: none;
+        padding: 10px;
+      }
+
+      .project-section li {
+        margin-bottom: 10px;
+      }
+/* Sezione di contatto */
+.contact-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-top: 3px solid #4B0082;
+}
+
+.contact-section h2 {
+  color: #4B0082;
+  font-size: 2rem;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.contact-section a {
+  color: #4B0082;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+      /* Media Queries per dispositivi mobili */
+      @media (max-width: 768px) {
+        body {
+          font-size: 14px;
+        }
+
+        .container {
+          width: 95%;
+        }
+
+        table, form {
+          width: 100%;
+        }
+
+        table th, table td {
+          padding: 8px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+   <nav>
+  <a href="#">Home</a>
+  <a href="#arkadia">Progetti</a> <!-- Porta alla sezione Arkadia -->
+  <a href="#contact">Contattami</a> <!-- Porta alla sezione di contatto in fondo alla pagina -->
+</nav>
+
+
+
+    <div class="container">
+      <h1>Il mio primo progetto: Arkadia</h1>
+      <p>Scopri tutti i dettagli del progetto di gioco "Arkadia"!</p>
+
+      <!-- Sezione Progetto Gioco -->
+      <div class="project-section">
+        <h2>🎮 Progetto Gioco: Arkadia</h2>
+        <ul>
+          <li><strong>Genere:</strong> RPG Open World Multiplayer Online</li>
+          <li><strong>Tema:</strong> Fantasy</li>
+          <li><strong>Target Audience:</strong> Giocatori appassionati di fantasy, MMORPG e open world</li>
+        </ul>
+      </div>
+
+      <!-- Sezione Grafica -->
+      <div class="project-section">
+        <h2>🖥️ 2. Grafica</h2>
+        <ul>
+          <li><strong>Stile visivo:</strong> Realismo fantasy, altamente dettagliato e scalabile</li>
+          <li><strong>Motore grafico:</strong> 3D con Unreal Engine</li>
+          <li><strong>Adattabilità:</strong> Ottimizzato per PC, Mobile e Console</li>
+        </ul>
+      </div>
+
+      <!-- Sezione Gameplay -->
+      <div class="project-section">
+        <h2>🎮 3. Gameplay</h2>
+        <ul>
+          <li><strong>Personaggi giocabili:</strong> Creature fantasy e mitologiche (Orchi, Elfi, Vichinghi, Maghi, ecc.)</li>
+          <li><strong>Meccaniche principali:</strong> Combattimento in tempo reale, crafting, missioni, diplomazia tra regni</li>
+          <li><strong>Mappa di gioco:</strong> Un'isola divisa in regni, ognuno con caratteristiche uniche</li>
+        </ul>
+      </div>
+
+      <!-- Sezione Tecnologia e Sviluppo -->
+      <div class="project-section">
+        <h2>🧰 4. Tecnologia e Sviluppo</h2>
+        <ul>
+          <li><strong>Motore di gioco:</strong> Unreal Engine 5</li>
+          <li><strong>Strumenti ausiliari suggeriti:</strong> Blender, Quixel Megascans, GitHub</li>
+        </ul>
+      </div>
+
+      <!-- Sezione Rilascio -->
+      <div class="project-section">
+        <h2>🚀 5. Rilascio e Distribuzione</h2>
+        <ul>
+          <li><strong>Piattaforme di rilascio:</strong> Steam, Epic Games Store, Console (da definire), Mobile (successivamente)</li>
+          <li><strong>Obiettivo rilascio demo/beta:</strong> 📅 Entro il 1 Marzo 2026</li>
+        </ul>
+      </div>
+
+      <!-- Sezione Promozione -->
+      <div class="project-section">
+        <h2>📢 6. Promozione e Marketing</h2>
+        <ul>
+          <li><strong>Strategie iniziali:</strong> Social Media, Devlog mensili, Community-building su Discord</li>
+        </ul>
+      </div>
+
+      <!-- Sezione Azienda -->
+      <div class="project-section">
+        <h2>🧾 7. Azienda e Struttura</h2>
+        <ul>
+          <li><strong>Nome azienda:</strong> Da definire</li>
+          <li><strong>Missione:</strong> Creare mondi coinvolgenti e immersivi che uniscano fantasy e interazione sociale</li>
+          <li><strong>Forma giuridica:</strong> SRL</li>
+        </ul>
+      </div>
+
+      <!-- Sezione Timeline -->
+      <div class="project-section">
+        <h2>📆 8. Timeline (Roadmap)</h2>
+        <table>
+          <tr>
+            <th>Fase</th>
+            <th>Obiettivo</th>
+            <th>Scadenza</th>
+          </tr>
+          <tr>
+            <td>Fase 1</td>
+            <td>Prototipo di base (movimento, mappa, UI)</td>
+            <td>Luglio 2025</td>
+          </tr>
+          <tr>
+            <td>Fase 2</td>
+            <td>Primo regno giocabile + sistema di combattimento</td>
+            <td>Ottobre 2025</td>
+          </tr>
+          <tr>
+            <td>Fase 3</td>
+            <td>Diplomazia + missioni + crafting</td>
+            <td>Gennaio 2026</td>
+          </tr>
+          <tr>
+            <td>Fase 4</td>
+            <td>Beta giocabile per test pubblico</td>
+            <td>Marzo 2026</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+<!-- Sezione Feedback -->
+<div class="feedback-section">
+  <h2>💬 Lascia il tuo Feedback!</h2>
+  <p>Hai delle idee su come migliorare il progetto o suggerimenti? Scrivili qui sotto!</p>
+  <form action="https://script.google.com/macros/s/AKfycbzqKyoBL3xRpV9t7EBNj7JUkhbgx9f3r3QoQ63yt9DVeeZPv4CW1XOuS2eM_ewRYKuVrw/exec" method="post">
+  
+  <!-- Campo Nome -->
+  <label for="nome">Il tuo nome (opzionale):</label>
+  <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
+
+  <!-- Campo Email -->
+  <label for="email">La tua email (opzionale):</label>
+  <input type="email" id="email" name="email" placeholder="Inserisci la tua email">
+
+  <!-- Campo Feedback -->
+  <label for="feedback">Il tuo feedback:</label>
+  <textarea id="feedback" name="feedback" rows="4" placeholder="Scrivi il tuo feedback" required></textarea>
+
+  <!-- Bottone di invio -->
+  <input type="submit" value="Invia il Feedback">
+</form>
+
+</div>
+
+<!-- Sezione Donazioni -->
+<div class="donation-section">
+  <h2>💖 Sostieni il Progetto Arkadia</h2>
+  <p>Se ti piace l'idea e vuoi supportare lo sviluppo del gioco, puoi fare una donazione!</p>
+  <form action="https://www.paypal.com/donate" method="post" target="_top">
+    <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@example.com"> <!-- Usa il tuo indirizzo PayPal -->
+    <input type="hidden" name="item_name" value="Donazione per Arkadia">
+    <input type="hidden" name="currency_code" value="EUR"> <!-- Imposta la valuta -->
+    <input type="submit" value="Donazione via PayPal" class="donate-button">
+  </form>
+  <p>Ogni piccolo contributo fa la differenza!</p>
+</div>
+<!-- Sezione Contatto -->
+<div id="contact" class="contact-section" style="text-align: center; margin-top: 50px;">
+  <h2>📧 Contattami</h2>
+  <p>Se hai domande o suggerimenti, puoi contattarmi via email all'indirizzo:</p>
+  <p><strong><a href="mailto:arkadiagamestudio@gmail.com">arkadiagamestudio@gmail.com</a></strong></p>
+
+</div>
+<script>
+  document.querySelector('form').onsubmit = function(event) {
+    event.preventDefault(); // Ferma il comportamento predefinito
+
+    const form = this;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.result === "success") {
+        alert("✅ Il tuo feedback è stato inviato con successo!");
+        form.reset(); // Pulisce i campi del form
+      } else {
+        alert("❌ Si è verificato un errore durante l'invio.");
+      }
+    })
+    .catch(error => {
+      console.error('Errore:', error);
+      alert("⚠️ Errore di rete. Riprova più tardi.");
+    });
+  };
+</script>
+
+
+  </body>
+</html>
